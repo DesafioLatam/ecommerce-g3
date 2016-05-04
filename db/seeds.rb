@@ -16,3 +16,5 @@ Product.create(name: "Iphone 6", photo: "", stock: 10, category: c)
 
 c = Category.create(name: "Notebooks")
 Product.create(name: "Macbook Pro", photo: "", stock: 20, category: c)
+
+u = User.create(email: "gonzalo@desafiolatam.com", password:"12345678")

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  total_price: 1
+  total_price: 0
   open: false
   user: one
 
 two:
-  total_price: 1
-  open: false
-  user: two
+  total_price: 0
+  open: true
+  user: one
