@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20160504223817) do
 
   create_table "carts", force: :cascade do |t|
     t.integer  "total_price"
-    t.boolean  "open"
+    t.boolean  "open",        default: true
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
