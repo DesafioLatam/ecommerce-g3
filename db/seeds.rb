@@ -10,12 +10,15 @@ Order.destroy_all
 Product.destroy_all
 Category.destroy_all
 
+s = Store.create(name:"Desafio Latam", address:"Providencia 1363, Santiago, Chile")
+
 c = Category.create(name: "Teléfono")
-Product.create(name: "Galaxy 6", photo: "", stock: 10, category: c, price:100, created_at: Date.today - 2.day)
-Product.create(name: "Galaxy 5", photo: "", stock: 5, category: c, price:200, created_at: Date.today - 1.day)
-Product.create(name: "Iphone 6", photo: "", stock: 10, category: c, price:300)
+
+Product.create(name: "Galaxy 6", photo: "", stock: 10, category: c, price:100, created_at: Date.today - 2.day, store: s)
+Product.create(name: "Galaxy 5", photo: "", stock: 5, category: c, price:200, created_at: Date.today - 1.day, store: s)
+Product.create(name: "Iphone 6", photo: "", stock: 10, category: c, price:300, store: s)
 
 c = Category.create(name: "Notebooks")
-Product.create(name: "Macbook Pro", photo: "", stock: 20, category: c, price:400)
+Product.create(name: "Macbook Pro", photo: "", stock: 20, category: c, price:400, store: s)
 
 u = User.create(email: "gonzalo@desafiolatam.com", password:"12345678")
