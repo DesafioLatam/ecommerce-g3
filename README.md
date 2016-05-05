@@ -1,24 +1,8 @@
-## README
+# Requerimientos cubiertos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Al crear un usuario se debe crear un carro abierto
+- Al cerrar un carro se debe crear un carro nuevo del mismo usuario abierto
+- Al "ordenar un producto" asociarlo al último carro abierto.
+- Al "ordenar un producto" se debe actualizar el precio total del carro
+- Al eliminar un producto del carro también se debe actualizar el precio del carro
+- Un pago exitoso cierra el carro, el pago puede guardarse en un modelo adicional o dentro del mismo del carro, la relación es 1 a 1
