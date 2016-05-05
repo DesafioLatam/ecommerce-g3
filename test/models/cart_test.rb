@@ -22,4 +22,10 @@ class CartTest < ActiveSupport::TestCase
     user = users(:one)
     assert_equal 250, user.last_cart.current_price
   end
+
+  test "after close the total_price must be equal to current_price" do
+    cart = carts(:one)
+    cart.save
+    assert_equal cart.total_price, cart.current_price
+  end
 end
