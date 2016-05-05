@@ -6,6 +6,7 @@
       <div class="col-md-3">
         <div class="well">
           <h4> <%= product.name %> <small> (<%= product.category.try(:name) %>) </small></h4>
+          <h5> tienda: <%= product.store.name %> </h5>
         <p> Precio: <%= product.price %> </p>
         <p> Stock: <%= product.stock %> </p>
         <%= link_to 'Comprar', product_orders_path(product), method: :post, class:"btn btn-primary" %>

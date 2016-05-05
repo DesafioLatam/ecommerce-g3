@@ -1,10 +1,11 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @stores = Store.near([current_user.latitude, current_user.longitude], 3, :units => :km)
+    @products = Product.where(store_id: @stores.collect(&:id))
   end
 
   # GET /products/1

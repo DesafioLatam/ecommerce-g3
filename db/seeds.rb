@@ -9,6 +9,8 @@
 Order.destroy_all
 Product.destroy_all
 Category.destroy_all
+Cart.destroy_all
+User.destroy_all
 
 s = Store.create(name:"Desafio Latam", address:"Providencia 1363, Santiago, Chile")
 
@@ -21,4 +23,4 @@ Product.create(name: "Iphone 6", photo: "", stock: 10, category: c, price:300, s
 c = Category.create(name: "Notebooks")
 Product.create(name: "Macbook Pro", photo: "", stock: 20, category: c, price:400, store: s)
 
-u = User.create(email: "gonzalo@desafiolatam.com", password:"12345678")
+u = User.create(email: "gonzalo@desafiolatam.com", password:"12345678", address: "Ricardo Lyon 48, Santiago, Chile")
