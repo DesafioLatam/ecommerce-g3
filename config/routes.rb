@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :carts, only: :show
   devise_for :users
   get 'dashboard/index'
 
