@@ -5,6 +5,7 @@ class Cart < ApplicationRecord
 
   before_save :update_total_price
   after_save :create_new_cart
+  has_one :payment
 
 
   def update_total_price
