@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_one :last_cart, ->{ order 'created_at desc'}, class_name: 'Cart'
 
   after_create :build_cart
+
+  geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
   def build_cart
