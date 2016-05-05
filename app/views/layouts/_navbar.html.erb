@@ -41,6 +41,7 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li> <a href="#"> Carro (<%= current_user.last_cart.orders.count %>) </a> </li>
           <li><a href="<%= destroy_user_session_path %>">Log out</a></li>
         <% else %>
           <li><a href="<%= new_user_session_path %>">Log in</a></li>

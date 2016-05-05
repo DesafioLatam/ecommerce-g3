@@ -26,8 +26,8 @@ test:
   database: ecommerce_test
   user: gonzalosanchez
 
+
 production:
-  <<: *default
   adapter: postgresql
   encoding: unicode
   pool: 5
