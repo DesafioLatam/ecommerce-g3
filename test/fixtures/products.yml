@@ -4,8 +4,10 @@ one:
   name: MyString
   stock: 1
   category: one
+  price: 100
 
 two:
   name: MyString
   stock: 1
   category: two
+  price: 150

@@ -17,4 +17,9 @@ class CartTest < ActiveSupport::TestCase
     user.carts.first.save
     assert_equal 2, user.carts.count()
   end
+
+  test "current_price must correspond to the sum of the prices of orders" do
+    user = users(:one)
+    assert_equal 250, user.last_cart.current_price
+  end
 end

@@ -3,7 +3,12 @@
 one:
   user: one
   product: one
+  cart: one
+  price: 100
+
 
 two:
-  user: two
+  user: one
   product: two
+  cart: one
+  price: 150

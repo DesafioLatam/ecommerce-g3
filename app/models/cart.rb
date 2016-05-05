@@ -1,6 +1,7 @@
 class Cart < ApplicationRecord
   belongs_to :user
   validates :user, presence: true
+  has_many :orders
 
   after_save :create_new_cart
 
@@ -13,5 +14,9 @@ class Cart < ApplicationRecord
   def close!
     self.open = false
     save
+  end
+
+  def current_price
+    orders.collect(&:price).sum()
   end
 end
