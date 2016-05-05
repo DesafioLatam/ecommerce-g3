@@ -20,6 +20,8 @@ gem 'chartkick'
 gem 'pg'
 gem 'groupdate'
 gem 'devise', git: 'git@github.com:plataformatec/devise.git'
+gem 'geocoder'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
