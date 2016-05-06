@@ -6,6 +6,11 @@ class ProductsController < ApplicationController
   def index
     @stores = Store.near([current_user.latitude, current_user.longitude], 3, :units => :km)
     @products = Product.where(store_id: @stores.collect(&:id))
+
+    @markers = Gmaps4rails.build_markers(@stores) do |store, marker|
+      marker.lat store.latitude
+      marker.lng store.longitude
+    end
   end
 
   # GET /products/1

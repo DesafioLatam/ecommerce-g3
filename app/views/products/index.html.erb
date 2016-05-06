@@ -38,6 +38,7 @@
       },
       internal: {id: 'map'}
     }, function(){
+      markers = handler.addMarkers(<%=raw @markers.to_json %>);
       map = handler.getMap();
       google.maps.event.addListener(map, "click", function(){
         console.log("hola");
