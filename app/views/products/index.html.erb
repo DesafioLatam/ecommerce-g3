@@ -33,16 +33,24 @@
     handler = Gmaps.build('Google');
     handler.buildMap({
       provider: {
-        zoom: 14,
+        zoom: 13,
         center: {lat:<%= current_user.latitude %>, lng:<%= current_user.longitude%>},
       },
       internal: {id: 'map'}
     }, function(){
       markers = handler.addMarkers(<%=raw @markers.to_json %>);
       map = handler.getMap();
-      google.maps.event.addListener(map, "click", function(){
-        console.log("hola");
+      new google.maps.Circle({
+        map: map,
+        center: {lat:<%= current_user.latitude %>, lng:<%= current_user.longitude %>},
+        radius: 2000,
+        fillColor: '#FF0000',
+        strokeColor: '#FF0000'
       });
+
+      // google.maps.event.addListener(map, "click", function(){
+      //   console.log("hola");
+      // });
 
     });
   };
